@@ -38,7 +38,7 @@ int main() {
             jumlahBarang += 1;
             listBarang[jumlahBarang].kode = kodeBarang;
             listBarang[jumlahBarang].nama = namaBarang;
-            cout << "\nBarang berhasil ditambahkan!\n\n";
+            cout << "\n" <<namaBarang <<" berhasil ditambahkan!\n";
         } else if (pilihan == 2) {
             if (jumlahBarang > 0) {
                 cout << "\nDaftar Barang:\n";
@@ -57,4 +57,3 @@ int main() {
     cout << "Terima kasih";
     return 0;
 }
-
