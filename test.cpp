@@ -5,7 +5,7 @@ using namespace std;
 const string namaDev = "Afriza Ahmad Muqoffa";
 
 struct Barang{
-    int kode;
+    string kode;
     string nama;
 };
 
@@ -24,16 +24,11 @@ int main()
         menu();
         if(cin>>pilihan){
             if(pilihan == 1){
-                int kodeBarang;
+                string kodeBarang;
                 string namaBarang;
                 
-                cout<<"Masukkan kode barang : (hanya masukkan angka!)"<<endl;
-                while(!(cin>>kodeBarang)){
-                    cin.clear();
-                    cin.ignore();
-                    cout<<"Masukkan kode barang hanya dengan bilangan bulat!"<<endl;
-                    cout<<"Masukkan kode barang : (hanya masukkan angka!)"<<endl;
-                }
+                cout<<"Masukkan kode barang :"<<endl;
+                cin>>kodeBarang;
                 cout<<"Masukkan nama barang : "<<endl;
                 cin.ignore();
                 getline(cin, namaBarang);
