@@ -1,59 +1,65 @@
 #include<iostream>
-#include<vector>
 
 using namespace std;
 
-struct Barang {
+const string namaDev = "Afriza Ahmad Muqoffa";
+
+struct Barang{
     int kode;
     string nama;
 };
 
 void menu(){
-        cout << "\nMenu:" << endl;
-        cout << "1. Input Barang" << endl;
-        cout << "2. Tampilkan Semua Barang" << endl;
-        cout << "3. Keluar" << endl;
-        cout << "Pilih: ";
+    cout<<"Menu :\n1. Input barang\n2. Tampilkan barang\n3. Keluar\nPilih: ";
 }
 
-int main() {
-    Barang listBarang[99999];
+int main()
+{
+    int n=99999;
+    Barang listBarang[n];
     int pilihan;
     int jumlahBarang = 0;
-
-    do {
+    
+    do{
         menu();
-        cin >> pilihan;
-
-        if (pilihan == 1) {
-            int kodeBarang;
-            string namaBarang;
-
-            cout << "Masukkan Kode Barang: ";
-            cin >> kodeBarang;
-            cout << "Masukkan Nama Barang: ";
-            cin.ignore();
-            getline(cin, namaBarang);
-
-            jumlahBarang += 1;
-            listBarang[jumlahBarang].kode = kodeBarang;
-            listBarang[jumlahBarang].nama = namaBarang;
-            cout << "\n" <<namaBarang <<" berhasil ditambahkan!\n";
-        } else if (pilihan == 2) {
-            if (jumlahBarang > 0) {
-                cout << "\nDaftar Barang:\n";
-                for (int i = 1; i <= jumlahBarang; ++i) {
-                    cout <<i<< ". Kode: " << listBarang[i].kode << ", Nama: " << listBarang[i].nama << endl;
+        if(cin>>pilihan){
+            if(pilihan == 1){
+                int kodeBarang;
+                string namaBarang;
+                
+                cout<<"Masukkan kode barang : (hanya masukkan angka!)"<<endl;
+                while(!(cin>>kodeBarang)){
+                    cin.clear();
+                    cin.ignore();
+                    cout<<"Masukkan kode barang hanya dengan bilangan bulat!"<<endl;
                 }
-            } else {
-                cout << "Belum ada barang yang diinput.\n";
+                cout<<"Masukkan nama barang : "<<endl;
+                cin.ignore();
+                getline(cin, namaBarang);
+                
+                listBarang[jumlahBarang].kode = kodeBarang;
+                listBarang[jumlahBarang].nama = namaBarang;
+                jumlahBarang+=1;
+                cout<<"\nKode["<<kodeBarang<<"], Nama["<<namaBarang<<"] berhasil ditambahkan!"<<endl;
+            }else if(pilihan == 2){
+                if(jumlahBarang > 0){
+                    cout<<"\nDaftar barang:\n";
+                    for(int i = 0; i < jumlahBarang; i++){
+                        cout<<i+1<<". Kode: "<<listBarang[i].kode<<", Nama: "<<listBarang[i].nama<<endl;
+                    }
+                }else{
+                    cout<<"\nBelum ada barang yang ditambahkan!"<<endl;
+                }
+            }else if(pilihan != 3){
+                cout<<"\n\nInput tidak valid!\nMasukkan angka 1-3"<<endl;
             }
-        } else if (pilihan != 3) {
-             cout << "\nInput tidak valid. Harap masukkan angka antara 1 sampai 3.";
+        }else{
+            cin.clear();
+            cin.ignore();
+            cout<<"\n\nInput tidak valid!\nMasukkan angka 1-3"<<endl;    
         }
         
-    } while (pilihan != 3);
-
-    cout << "Terima kasih";
+    }while(pilihan != 3);
+    cout<<"Terima kasih!\n\n© 2023 "<<namaDev<<".";
     return 0;
 }
