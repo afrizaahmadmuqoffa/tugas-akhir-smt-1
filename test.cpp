@@ -37,10 +37,15 @@ int main()
                 cin.ignore();
                 getline(cin, namaBarang);
                 
+                if(jumlahBarang < n){
                 listBarang[jumlahBarang].kode = kodeBarang;
                 listBarang[jumlahBarang].nama = namaBarang;
                 jumlahBarang+=1;
                 cout<<"\nKode["<<kodeBarang<<"], Nama["<<namaBarang<<"] berhasil ditambahkan!"<<endl;
+                }else{
+                    cout<<"\nPenyimpanan anda sudah mencapai batas!"<<endl;
+                }
+                
             }else if(pilihan == 2){
                 if(jumlahBarang > 0){
                     cout<<"\nDaftar barang:\n";
