@@ -61,6 +61,6 @@ int main()
         }
         
     }while(pilihan != 3);
-    cout<<"Terima kasih!\n\n© 2023 "<<namaDev<<".";
+    cout<<"Terima kasih!\n\n© Copyright 2023 "<<namaDev<<".";
     return 0;
 }
