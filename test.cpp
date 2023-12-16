@@ -27,11 +27,12 @@ int main()
                 int kodeBarang;
                 string namaBarang;
                 
-                cout<<"\nMasukkan kode barang : (hanya masukkan angka!)"<<endl;
+                cout<<"Masukkan kode barang : (hanya masukkan angka!)"<<endl;
                 while(!(cin>>kodeBarang)){
                     cin.clear();
                     cin.ignore();
                     cout<<"Masukkan kode barang hanya dengan bilangan bulat!"<<endl;
+                    cout<<"Masukkan kode barang : (hanya masukkan angka!)"<<endl;
                 }
                 cout<<"Masukkan nama barang : "<<endl;
                 cin.ignore();
