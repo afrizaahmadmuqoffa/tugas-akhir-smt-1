@@ -27,7 +27,7 @@ int main()
                 int kodeBarang;
                 string namaBarang;
                 
-                cout<<"Masukkan kode barang : (hanya masukkan angka!)"<<endl;
+                cout<<"\nMasukkan kode barang : (hanya masukkan angka!)"<<endl;
                 while(!(cin>>kodeBarang)){
                     cin.clear();
                     cin.ignore();
